@@ -11,6 +11,14 @@
   --text-highlight-color-purple: #d2a8ff;
 }
 
+[data-theme="light"] {
+  --main-color: #ffffff;
+  --secondary-color: #f6f8fa;
+  --border-color: #d0d7de;
+  --light-text-color: #57606a;
+  --text-hover-color: #24292f;
+}
+
 body {
   margin: 0;
   background-color: var(--main-color);
@@ -76,28 +84,36 @@ header {
 }
 
 .navbar a:hover {
-  color: white;
+  color: var(--text-hover-color);
 }
 
 .navbar a.active {
-  color: white;
+  color: var(--text-hover-color);
   font-weight: bold;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--text-highlight-color-blue);
 }
 
 .main-content {
   padding: 0.75rem 1rem;
-  color: #c9d1d9;
-  background-color: #0d1117; 
+  color: var(--light-text-color);
+  background-color: var(--main-color); 
 }
 
 .main-content h1 {
-  color: white;
+  color: var(--text-hover-color);
   margin-bottom: 0.5rem;
 }
 
 .main-content p {
-  color: #8b949e;
+  color: var(--light-text-color);
   font-size: 1rem;
   line-height: 1.6;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-hover-color);
+  font-size: 1.2rem;
+  cursor: pointer;
 }

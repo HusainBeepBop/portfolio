@@ -26,7 +26,33 @@ function loadPage(page) {
       });
   }
   
-  document.addEventListener('DOMContentLoaded', function () {
-    loadPage('about'); 
+  function handleHashChange() {
+    const page = window.location.hash.substring(1) || 'about';
+    loadPage(page);
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    handleHashChange(); // Load the page on first visit
   });
   
+  window.addEventListener('hashchange', handleHashChange); // React to hash change
+  
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const newTheme = current === 'light' ? 'dark' : 'light';
+  setTheme(newTheme);
+}
+
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  setTheme(savedTheme);
+});
