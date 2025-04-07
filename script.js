@@ -57,3 +57,19 @@ window.addEventListener('DOMContentLoaded', () => {
   setTheme(savedTheme);
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Page load based on hash
+    const initialPage = window.location.hash.substring(1) || 'about';
+    loadPage(initialPage);
+  
+    // Blog item click listener
+    document.addEventListener('click', function (e) {
+      const blogItem = e.target.closest('.blog-item');
+      if (blogItem && blogItem.dataset.page) {
+        const page = blogItem.dataset.page;
+        window.location.hash = page;
+        loadPage(page);
+      }
+    });
+  });
+  
