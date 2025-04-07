@@ -143,10 +143,6 @@ header {
   cursor: pointer;
 }
 
-.blog-item:hover {
-  border-color: var(--text-highlight-color-purple);
-}
-
 .blog-thumb {
   width: 100px;
   height: 100px;
@@ -166,9 +162,14 @@ header {
   margin-bottom: 0.25rem;
 }
 
-.blog-item:hover .blog-date,
-.blog-item:hover .blog-snippet {
-  color: var(--text-highlight-color-purple);
+.blog-item:hover {
+  border-color: var(--text-highlight-color-purple); 
+}
+
+.blog-item:hover .blog-title,
+.blog-item:hover .blog-snippet,
+.blog-item:hover .blog-date {
+  color: var(--text-highlight-color-purple); 
 }
 
 .blog-title {
