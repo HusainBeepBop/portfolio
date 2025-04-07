@@ -85,20 +85,17 @@ function loadPage(page) {
       });
   }
   
-  document.addEventListener('click', function (e) {
-    const blogItem = e.target.closest('.blog-item');
-    if (blogItem && blogItem.hasAttribute('data-blog')) {
-      const blogFile = blogItem.getAttribute('data-blog');
-      const pageName = blogFile.replace('.html', '');
-  
-      window.location.hash = pageName;
-      loadPage(pageName);
-    }
-  });
-  
-  // Manual blog loader for onclick usage
   function loadBlog(blogFile) {
     const pageName = blogFile.replace('.html', '');
     window.location.hash = pageName;
     loadPage(pageName);
   }
+  
+  document.addEventListener('click', function (e) {
+    const blogItem = e.target.closest('.blog-item');
+    if (blogItem && blogItem.hasAttribute('data-blog')) {
+      const blogFile = blogItem.getAttribute('data-blog');
+      loadBlog(blogFile);
+    }
+  });
+  
