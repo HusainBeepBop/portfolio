@@ -183,3 +183,7 @@ header {
   margin-top: 0.3rem;
   font-size: 0.95rem;
 }
+
+.blog-content h3{
+  color: var(--text-highlight-color-yellow)
+}
