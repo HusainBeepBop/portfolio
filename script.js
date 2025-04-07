@@ -32,10 +32,10 @@ function loadPage(page) {
   }
   
   document.addEventListener('DOMContentLoaded', () => {
-    handleHashChange(); // Load the page on first visit
+    handleHashChange(); 
   });
   
-  window.addEventListener('hashchange', handleHashChange); // React to hash change
+  window.addEventListener('hashchange', handleHashChange); 
   
 
 function setTheme(theme) {
