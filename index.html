@@ -20,17 +20,14 @@
   </header>
 
   <nav class="navbar">
-    <a href="#" class="active">About</a>
-    <a href="#">Projects</a>
-    <a href="#">Art</a>
-    <a href="#">Socials</a>
-    <a href="#">Start Ups</a>
+    <a href="#" data-page="about" onclick="loadPage('about')" class="active">About</a>
+    <a href="#" data-page="projects" onclick="loadPage('projects')">Projects</a>
+    <a href="#" data-page="art" onclick="loadPage('art')">Art</a>
+    <a href="#" data-page="socials" onclick="loadPage('socials')">Socials</a>
+    <a href="#" data-page="startup" onclick="loadPage('startup')">Start Ups</a>
   </nav>
 
-  <main class="main-content">
-    <h1>About</h1>
-    <p>Welcome to the About section! This is where I tell people what this page or project is about. 🚀</p>
-  </main>
+  <main id="main-content" class="main-content"></main>
   
   
   <script src="script.js"></script>
