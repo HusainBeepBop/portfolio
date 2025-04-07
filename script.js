@@ -56,3 +56,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'dark';
   setTheme(savedTheme);
 });
+
+
+document.addEventListener('click', function (e) {
+    if (e.target.closest('.blog-preview')) {
+      const blogFile = e.target.closest('.blog-preview').getAttribute('data-blog');
+      if (blogFile) {
+        loadPage(blogFile.replace('.html', '')); 
+      }
+    }
+  });
+  
