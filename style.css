@@ -47,7 +47,7 @@ header {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #c4c4c4; /* placeholder until your signature logo is ready */
+  background-color: #c4c4c4; 
 }
 
 .repo-title {
@@ -64,6 +64,10 @@ header {
 .status-text {
   font-size: 0.9rem;
   color: var(--light-text-color);
+  display: flex;
+  align-items: center; /* Aligns the text and button vertically */
+  justify-content: flex-start; /* Aligns the content to the left */
+  gap: 0.25rem;
 }
 
 .navbar {
