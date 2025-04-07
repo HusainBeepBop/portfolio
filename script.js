@@ -86,9 +86,9 @@ function loadPage(page) {
   }
   
   function loadBlog(blogFile) {
-    const pageName = blogFile.replace('.html', '');
+    const pageName = blogFile.replace('.html', '').replace(/^blogs\//, '');
     window.location.hash = pageName;
-    loadPage(pageName);
+    loadPage(blogFile);
   }
   
   document.addEventListener('click', function (e) {
