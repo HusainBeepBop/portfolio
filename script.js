@@ -9,9 +9,11 @@ function loadPage(page) {
         return response.text();
       })
       .then(data => {
-        document.getElementById('main-content').innerHTML = data;
+        const contentDiv = document.getElementById('main-content');
+        if (contentDiv) {
+          contentDiv.innerHTML = data;
+        }
   
-        // Set active tab
         document.querySelectorAll('.navbar a').forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('data-page') === page) {
@@ -21,7 +23,10 @@ function loadPage(page) {
       })
       .catch(err => {
         console.error('Error loading page:', err);
-        document.getElementById('main-content').innerHTML = `<p style="color:red;">Failed to load ${page}.html</p>`;
       });
   }
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    loadPage('about'); 
+  });
   
