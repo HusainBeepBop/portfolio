@@ -144,7 +144,7 @@ header {
 }
 
 .blog-item:hover {
-  border-color: var(--text-highlight-color-blue);
+  border-color: var(--text-highlight-color-purple);
 }
 
 .blog-thumb {
