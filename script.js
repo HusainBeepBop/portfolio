@@ -58,14 +58,47 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('click', function (e) {
+function loadPage(page) {
+    fetch(`${page}.html`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        const contentDiv = document.getElementById('main-content');
+        if (contentDiv) {
+          contentDiv.innerHTML = data;
+        }
+  
+        // Set active navbar item
+        document.querySelectorAll('.navbar a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('data-page') === page) {
+            link.classList.add('active');
+          }
+        });
+      })
+      .catch(err => {
+        console.error('Error loading page:', err);
+      });
+  }
+  
+  document.addEventListener('click', function (e) {
     const blogItem = e.target.closest('.blog-item');
     if (blogItem && blogItem.hasAttribute('data-blog')) {
       const blogFile = blogItem.getAttribute('data-blog');
       const pageName = blogFile.replace('.html', '');
   
-      window.location.hash = pageName; 
-      loadPage(pageName); 
+      window.location.hash = pageName;
+      loadPage(pageName);
     }
   });
   
+  // Manual blog loader for onclick usage
+  function loadBlog(blogFile) {
+    const pageName = blogFile.replace('.html', '');
+    window.location.hash = pageName;
+    loadPage(pageName);
+  }
