@@ -59,11 +59,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('click', function (e) {
-    if (e.target.closest('.blog-preview')) {
-      const blogFile = e.target.closest('.blog-preview').getAttribute('data-blog');
-      if (blogFile) {
-        loadPage(blogFile.replace('.html', '')); 
-      }
+    const blogItem = e.target.closest('.blog-item');
+    if (blogItem && blogItem.hasAttribute('data-blog')) {
+      const blogFile = blogItem.getAttribute('data-blog');
+      const pageName = blogFile.replace('.html', '');
+  
+      window.location.hash = pageName; 
+      loadPage(pageName); 
     }
   });
   
