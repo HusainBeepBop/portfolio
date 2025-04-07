@@ -168,7 +168,7 @@ header {
 
 .blog-item:hover .blog-date,
 .blog-item:hover .blog-snippet {
-  color: var(--text-highlight-color-blue);
+  color: var(--text-highlight-color-purple;
 }
 
 .blog-title {
