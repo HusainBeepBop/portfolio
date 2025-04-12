@@ -57,12 +57,12 @@ window.addEventListener('DOMContentLoaded', () => {
   setTheme(savedTheme);
 });
 
-// Allow blog cards to trigger page loads like navbar
+
 document.addEventListener('click', function (e) {
     const blogItem = e.target.closest('.blog-item');
     if (blogItem && blogItem.hasAttribute('data-page')) {
       const page = blogItem.getAttribute('data-page');
-      window.location.hash = page; // Triggers loadPage via hashchange
+      window.location.hash = page; 
     }
   });
   
